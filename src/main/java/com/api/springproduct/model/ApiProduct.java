@@ -1,20 +1,20 @@
-package com.api.springproduct.Model;
+package com.api.springproduct.model;
 
-public class apiProduct {
+public class ApiProduct {
 
     private String name;
     private String description;
     private Long stock;
     private Long price;
-    private Long freightprice;
+    private Long freightPrice;
     private String image;
 
-    public apiProduct(String name, String description, Long stock, Long price, Long freightprice, String image) {
+    public ApiProduct(String name, String description, Long stock, Long price, Long freightPrice, String image) {
         this.name = name;
         this.description = description;
         this.stock = stock;
         this.price = price;
-        this.freightprice = freightprice;
+        this.freightPrice = freightPrice;
         this.image = image;
     }
 
@@ -50,12 +50,12 @@ public class apiProduct {
         this.price = price;
     }
 
-    public Long getFreightprice() {
-        return freightprice;
+    public Long getFreightPrice() {
+        return freightPrice;
     }
 
-    public void setFreightprice(Long freightprice) {
-        this.freightprice = freightprice;
+    public void setFreightPrice(Long freightPrice) {
+        this.freightPrice = freightPrice;
     }
 
     public String getImage() {

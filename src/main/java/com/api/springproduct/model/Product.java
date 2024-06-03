@@ -1,10 +1,10 @@
-package com.api.springproduct.Model;
+package com.api.springproduct.model;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name= "products")
-public class product {
+public class Product {
 
     @Id
     @Column(name="id")
@@ -18,7 +18,7 @@ public class product {
     @Column(name="price")
     private Long price;
     @Column(name="freightprice")
-    private Long freightprice;
+    private Long freightPrice;
     @Column(name="image")
     private String image;
 
@@ -30,12 +30,12 @@ public class product {
         this.image = image;
     }
 
-    public Long getFreightprice() {
-        return freightprice;
+    public Long getFreightPrice() {
+        return freightPrice;
     }
 
-    public void setFreightprice(Long freightprice) {
-        this.freightprice = freightprice;
+    public void setFreightPrice(Long freightprice) {
+        this.freightPrice = freightprice;
     }
 
     public Long getPrice() {
@@ -78,7 +78,7 @@ public class product {
         this.id = id;
     }
 
-    public apiProduct ToApiProduct(){
-        return (new apiProduct(name, description, stock, price, freightprice, image));
+    public ApiProduct ToApiProduct(){
+        return (new ApiProduct(name, description, stock, price, freightPrice, image));
     }
 }
