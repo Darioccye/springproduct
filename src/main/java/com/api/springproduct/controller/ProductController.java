@@ -9,41 +9,41 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/apiproduct")
+@RequestMapping("/products")
 public class ProductController {
 
     @Autowired
-    private ProductRepository repo;
+    private ProductRepository repository;
 
-    @RequestMapping(value = "/products", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Product> getProducts() {
-        return repo.findAll();
+        return repository.findAll();
     }
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public @ResponseBody Product getProductById(@PathVariable String id) {
-        return repo.findById(id);
+        return repository.findById(id);
     }
 
-    @RequestMapping(value = "/products", method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     public @ResponseBody Product createProduct(@RequestBody Product product) {
-        return repo.save(product);
+        return repository.save(product);
     }
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public @ResponseBody Product deleteProductById(@PathVariable String id) {
-        Product prod = repo.findById(id);
-        if (prod == null) {
+        Product product = repository.findById(id);
+        if (product == null) {
             return null;
         } else {
-            repo.delete(prod);
-            return prod;
+            repository.delete(product);
+            return product;
         }
     }
 
-    @RequestMapping(value="/products", method = RequestMethod.PUT)
+    @RequestMapping(value="/", method = RequestMethod.PUT)
     public @ResponseBody Product updateProduct(@RequestBody Product product) {
-        return repo.save(product);
+        return repository.save(product);
     }
 
 }

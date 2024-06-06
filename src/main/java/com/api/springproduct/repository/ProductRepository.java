@@ -13,6 +13,6 @@ public interface ProductRepository extends CrudRepository<Product, Integer> {
 
     void delete(Product product);
 
-    <prod extends Product> prod save(prod product);
+    <tempProduct extends Product> tempProduct save(tempProduct product);
 
 }
